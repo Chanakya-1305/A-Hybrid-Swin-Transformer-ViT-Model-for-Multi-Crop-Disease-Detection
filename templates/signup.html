@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | crop disease detection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Navbar */
+    .navbar{
+      background:rgba(0,102,204,0.95);
+      backdrop-filter: blur(8px);
+      padding:15px 0;
+      }
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+    }
+    .nav-link {
+      color: white !important;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/static/leafimage.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
+    }
+
+    .signup-container {
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .signup-container h2 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .form-control {
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+    }
+
+    .btn-primary {
+      background-color: #2575fc;
+      border-color: #2575fc;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a5edb;
+    }
+
+    .text-muted a {
+      color: #2575fc;
+      text-decoration: none;
+    }
+
+    .text-muted a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0,102,204,0.95); backdrop-filter: blur(5px);">
+
+<div class="container">
+
+<a class="navbar-brand logo" href="/">Plant Care AI</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('home') }}">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('about') }}">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('dashboard') }}">Detect</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('signup') }}">Sign Up</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="signup-container" style="margin-top: 60px;">
+  <h2>Create Account</h2>
+  <form method="POST" action="{{ url_for('signup') }}">
+    <div class="mb-3">
+      <label for="fullname" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="fullname" name="fullname" required>
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="d-grid mt-4">
+      <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+    </div>
+  </form>
+  <p class="text-muted text-center mt-3">
+    Already have an account? <a href="{{ url_for('login') }}">Login here</a>
+  </p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
